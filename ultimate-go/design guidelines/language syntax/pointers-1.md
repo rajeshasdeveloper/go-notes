@@ -1,0 +1,18 @@
+-   Everything in Go is pass by value.
+-   It is wizzywig - means what you see is what you get.
+-   Go mainly focuses on integrity and minimizing the resources.
+-   value semantics:
+    -   OS allocates 1 thread or logical processor to the Go process.
+    -   1 OS thread usually gets allocated with stack of 1 Megabytes of memory
+    -   Go follows similar approach to creates its own light-weight thread named Goroutine with stack of 2 Kilobytes (4K for long time) of memory allocated to each goroutine.
+    -   Go creates the frame of the memory of the stack (sliced from the 1 Meg allocated by the OS).
+    -   go creates the copy of the data in its own memory frame.
+    -   Goroutine only has direct access to its memory frame it is operating on.
+    -   It gives the immutability means the goroutine can cause problems in the scope of frame not at the programming level.
+    -   Every time we make function calls, Go creates the new goroutine for us.
+    -   It giving the isolation.
+    -   Disadvantages:
+        -   We have multiple copies of the same data into the multiple memory frames.
+        -   This is called value semantics.
+        -   Sometimes it increases the code complexity.
+        -   The efficiency of value semantics results in safer code but increasing the memory significantly and affecting performance.

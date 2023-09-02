@@ -1,0 +1,10 @@
+-   here always look for optimization of correctness and not performance.
+-   to understand the cost we must understand how much memory we are allocating to the variable.
+-   only do the benchmark only the code is showing that we are using too much memory.
+-   understand memory allocation and padding
+-   To optimize the memory by reducing the padding, always order the fields from largest to smallest in terms of size.
+-   alignments are going to find the evenness throughout the struct.
+-   we get to know the memory layout.
+-   understanding the size of struct means we have to understand alignments and padding.
+-   there is no implicit type conversion in Go, to handle conversion do tell the Go explicitly (name type).
+-   for literal type the depth of intent is on declaration level, so conversion is possible and compiler does not complain at the time of conversion.

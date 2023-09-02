@@ -1,0 +1,10 @@
+-   Type is the life of program.
+-   type provides two informations.
+    -   _Size_ - how much memory needed to r/w in the given time.
+    -   _representation_ - what is represents.
+-   if we don't understand size, then we don't understand cost.
+-   64 bit archutecture means it's pointer size and address size is going to be 64 bit.
+-   Go playground we are seeing is single threaded AMD64 p32 architcture (native client architecture) - means address size is 32 bits
+-   always use var when intializing a variable with zero value (for int).
+-   Go doesn't have casting but has conversion, it created the new memory and it is always safer than sorry.
+-   integrity plays to keep our data and memory safe.
