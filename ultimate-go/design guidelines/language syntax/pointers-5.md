@@ -1,0 +1,19 @@
+-   We call Garbage Collector as tri-color mrk and sweep concurrent collector.
+-   It is not compacting garbage collector, memory on our heap does not move around, because memory on our stacks potentially are.
+-   once the allocation is on the heap it stays until it gets swept away.
+-   But the tri-color, is a mechanism.
+-   Everything come at costs, garbage collector causes the word latency, but in Go the idea is to reduce those points, have stopped the word down to their very bare minimum.
+-   Everything begins and ends with the pacing algorithm.
+-   So the garbage collector has an algorithm and the pacing algorithm.
+-   GC trying to do is balance three things
+    -   What we want is the smallest heap size where the garbage collector can run at the reasonable pace to do that.
+    -   The latency is never more than 100 microseconds per run.
+    -   GC make take longer time to clean up the things but we don't want to care at all as it runs concurrently, and to achieve this GC is allowed to take up to 25% of the available CPU capacity. (Doesn't necessarily have to, but it is allowed to depending on what's going on)
+-   Go GC is all about the lower latency and we all run together and we do things that are very constant and consistent pace.
+-   The pacing algorithm looks both our size pir heap and live heap.
+-   Pacing algorithm allocates 50% of the total heap size to live heap and when the program runs, live heap comes close to the heap.
+-   Anytime the live heap needs to go beyond the scope of the size of the heap, there is one configuration option in Go called GOGC and the default for GOGC is 100% growth on that heap when the live heap has to go by it.
+-   We need to maintain or stop that from happening to the extent by taking care of allocations. So the pacing algorithm can maintain the balance (trying to balance all three).
+-   pacing algorithm runs and live heap comes back down
+-   Less is always good to do, which means if less the work GC has to do, all other things run much faster. If more work it is going to take more time.
+-   Larger heap even though if with smaller live heap doesn't mean better performance, GC still needs to work longer to bring the live heap all the way to bottom. So we are not going to play with configuration here, let the GC do it.

@@ -1,0 +1,5 @@
+-   If Complier doesn't know the size of value at compile time, it must immediately built it on the heap, because the frames we are drawing to understand the memory allocation is happening at the time of code compilation.
+-   Again to remember, the Operating System's stack is about 1MB and our Go's stack is 2K.
+-   If we have lots of function calls and eventually it runs out of the 2K stack space, Go does is it has what it called **contiguous stacks** which is Go creates the new stack which is 25% more than the original one and copies all the frames to the new stack, It is going to take little bit of the latency hit for creating and copying the stack.
+-   As stack can be growing, it cannot have any pointers into it, because when creating the copy of frames at the time of creating the larger stack copying the previous stack memory will cause chaos especially when we are working with hundreds and thousands of Goroutines.
+-   We can use heap to store any type of value which wants to be shared across the program boundaries and not stack.

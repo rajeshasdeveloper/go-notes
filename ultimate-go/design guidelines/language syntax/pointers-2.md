@@ -6,4 +6,4 @@
     -   We need to be very careful when using pointer semantics as it has possibility of causing high side effects.
     -   Any memory below the active frame is not valid memory.
     -   When main makes a function call, it need an other memory frame and when it takes a new frame, it is going to clean the non active frames
-    -   So memory below the active frame no longer has an integrity
+    -   So memory below the active frame no longer has an integrity because the frame is going to be reused for new allocation.

@@ -1,0 +1,5 @@
+-   Constants are not variable.
+-   They exists only at the compile time.
+-   Implicit type conversion is applied for the constants of kind (untyped)
+-   There is no implicit conversion for the typed constants.
+-   The constants of type kind has to be at least of 256 bits of precision.
