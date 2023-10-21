@@ -1,0 +1,7 @@
+-   Go doesn't have any virtual machines like any other programming languages like Java or Scala, instead it is communicating with **real machine**.
+-   So keep in mind that you are going to communicate with real machine more or less when you're prgramming on Golang
+-   **Performace (lack of performance) comes from places**:
+    -   **latency**: latency on _Network, IO_
+    -   **memory allocation**: Go is not the fastest, it is fast enough. Because of self memory management tools such as _Garbage Collector (GC)_ costs in performance
+    -   **How you're accessing data**: How _efficiently_ you are accessing the data in program
+    -   **Algorithm efficiency**: Hardware will be so fast once we solve the above three problems and already we would have acheived more than what we need in terms of performance and little algorithm inefficiency is _ok_
